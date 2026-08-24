@@ -1,0 +1,55 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.centro {
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-700);      /* 4.66:1 sobre o creme */
+  margin-bottom: 0.9rem;
+}
+
+.tracinho {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: var(--gold-400);
+}
+.centro .tracinho:first-child { display: block; }
+.head:not(.centro) .tracinho:last-child { display: none; }
+
+.titulo {
+  font-size: clamp(2rem, 6.5vw, 2.85rem);
+  font-weight: 300;
+  line-height: 1.14;
+  text-wrap: balance;
+  margin-bottom: 0.9rem;
+}
+
+.enfase {
+  font-style: italic;
+  color: var(--gold-700);
+}
+
+.texto {
+  max-width: 58ch;
+  font-size: 1.03rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .head { margin-bottom: 3.75rem; }
+}

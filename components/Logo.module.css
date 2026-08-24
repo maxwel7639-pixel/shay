@@ -1,0 +1,37 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28em;
+  color: var(--gold-600);
+  line-height: 1;
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-logo);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 0.92;
+}
+
+.line { display: block; }
+
+/* a lótus acompanha as duas linhas do letreiro */
+.lotus {
+  width: 1.75em;
+  height: 1.75em;
+  flex: none;
+  margin-left: -0.06em;
+}
+
+.sm { font-size: 1rem; }
+.md { font-size: 1.25rem; }
+.lg { font-size: 2rem; }
+.xl { font-size: 2.75rem; }
+
+@media (min-width: 768px) {
+  .lg { font-size: 2.5rem; }
+  .xl { font-size: 3.5rem; }
+}

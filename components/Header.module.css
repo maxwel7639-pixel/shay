@@ -1,0 +1,148 @@
+/* No topo o header flutua sobre a foto escura do hero: texto claro.
+   Ao rolar, vira creme sólido e o texto volta ao café. */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-header);
+  transition: background-color 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.solid {
+  background: rgba(253, 250, 244, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--line-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 68px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.brand :global(.logo) {
+  color: var(--gold-200);
+  filter: drop-shadow(0 1px 5px rgba(46, 32, 19, 0.45));
+  transition: color 0.3s var(--ease), filter 0.3s var(--ease);
+}
+.solid .brand :global(.logo) {
+  color: var(--gold-600);
+  filter: none;
+}
+
+.nav { display: none; }
+
+.link {
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(253, 250, 244, 0.88);
+  text-shadow: 0 1px 6px rgba(46, 32, 19, 0.5);
+  transition: color 0.2s var(--ease), text-shadow 0.2s var(--ease);
+}
+.header:not(.solid) .link:hover { color: var(--white); }
+
+.solid .link {
+  color: var(--brown-700);
+  text-shadow: none;
+}
+.solid .link:hover { color: var(--espresso); }
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--gold-500);
+  transition: width 0.28s var(--ease);
+}
+.link:hover::after { width: 100%; }
+
+.cta { display: none; }
+
+/* --- botão hambúrguer --- */
+.toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px; height: 44px;
+  padding: 0 10px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--cream-50);
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(46, 32, 19, 0.4);
+  transition: transform 0.28s var(--ease), opacity 0.2s var(--ease),
+    background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.solid .bar { background: var(--brown-700); box-shadow: none; }
+.barTop { transform: translateY(6.5px) rotate(45deg); }
+.barBottom { transform: translateY(-6.5px) rotate(-45deg); }
+.barHide { opacity: 0; }
+
+/* --- overlay do menu --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(46, 32, 19, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+}
+.overlayVisivel { opacity: 1; visibility: visible; }
+
+/* --- painel mobile --- */
+/* o atributo hidden precisa vencer o display:flex do módulo */
+.painel[hidden] { display: none; }
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 1.25rem 2rem;
+  background: var(--cream-50);   /* opaco: o hero não pode vazar por trás */
+  border-bottom: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-md);
+}
+.painel nav { display: flex; flex-direction: column; }
+
+.linkMobile {
+  padding: 0.9rem 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--espresso);
+  border-bottom: 1px solid var(--line-soft);
+  transition: color 0.2s var(--ease);
+}
+.linkMobile:hover { color: var(--gold-700); }
+
+.btnMobile { margin-top: 1.25rem; }
+
+@media (min-width: 900px) {
+  .inner { min-height: 78px; }
+  .nav { display: flex; align-items: center; gap: 2rem; }
+  .cta { display: block; }
+  .toggle, .painel, .overlay { display: none; }
+}

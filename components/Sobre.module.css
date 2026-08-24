@@ -1,0 +1,153 @@
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* --- foto --- */
+/* o wrapper carrega o limite de largura para o selo ancorar na foto,
+   não na coluna inteira */
+.colFoto {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.molduraFoto {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+/* fio dourado por dentro da moldura */
+.molduraFoto::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(253, 250, 244, 0.34);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.foto {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.selo {
+  position: absolute;
+  right: -12px;
+  bottom: -14px;
+  display: grid;
+  place-items: center;
+  width: 68px; height: 68px;
+  background: var(--cream-50);
+  color: var(--gold-600);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+/* --- texto --- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 0.9rem;
+}
+.tracinho { display: block; width: 26px; height: 1px; background: var(--gold-400); }
+
+.titulo {
+  font-size: clamp(2.1rem, 7vw, 3rem);
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+.enfase { font-style: italic; color: var(--gold-700); }
+
+.paragrafo {
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: var(--text-body);
+  max-width: 60ch;
+  margin-bottom: 1.1rem;
+}
+.paragrafo strong { font-weight: 500; color: var(--espresso); }
+
+/* --- pilares --- */
+.pilares {
+  display: grid;
+  gap: 1.35rem;
+  margin: 2rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.pilares li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.pilarNum {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--gold-600);
+  line-height: 1.6;
+  min-width: 1.6rem;
+}
+
+.pilarTitulo {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--espresso);
+  margin-bottom: 0.15rem;
+}
+
+.pilarTexto {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 46ch;
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.linkInsta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-700);
+  transition: color 0.2s var(--ease);
+}
+.linkInsta:hover { color: var(--espresso); }
+
+@media (min-width: 560px) {
+  .acoes { flex-direction: row; align-items: center; gap: 1.5rem; }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: 4.5rem;
+  }
+  .colFoto { max-width: none; }
+  .selo { width: 84px; height: 84px; right: -22px; bottom: -22px; }
+}

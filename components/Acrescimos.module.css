@@ -1,0 +1,106 @@
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 0.9rem;
+}
+.tracinho { display: block; width: 26px; height: 1px; background: var(--gold-400); }
+
+.titulo {
+  font-size: clamp(2rem, 6.5vw, 2.85rem);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.enfase { display: block; font-style: italic; color: var(--gold-700); }
+
+.intro {
+  font-size: 1.03rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 52ch;
+  margin-bottom: 1.85rem;
+}
+
+.lista {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1.85rem;
+}
+
+.itemLista {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 1rem;
+  color: var(--text-body);
+}
+.itemLista:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.petala { color: var(--gold-500); flex: none; }
+
+.aviso {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--cream-200);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  margin-bottom: 1.85rem;
+}
+.aviso p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+.aviso strong { font-weight: 500; color: var(--espresso); }
+.avisoIcone { color: var(--gold-600); flex: none; margin-top: 2px; }
+
+.botao { align-self: flex-start; }
+
+.colFoto {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.molduraFoto {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.molduraFoto::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(253, 250, 244, 0.32);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.foto { width: 100%; height: auto; object-fit: cover; }
+
+@media (min-width: 640px) {
+  .lista { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 1.75rem; }
+  .itemLista:nth-last-child(-n + 2) { border-bottom: 0; padding-bottom: 0; }
+}
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); gap: 4.5rem; }
+  .colFoto { order: 2; max-width: none; }
+}

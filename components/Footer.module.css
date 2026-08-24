@@ -1,0 +1,91 @@
+.footer {
+  background: var(--espresso);
+  color: rgba(250, 244, 234, 0.78);
+  padding-top: var(--sp-8);
+}
+
+.inner {
+  display: grid;
+  gap: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+.marca { display: flex; flex-direction: column; }
+.marca :global(.logo) { color: var(--gold-300); }
+
+.tagline {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--cream-100);
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.pessoa {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 244, 234, 0.6);
+}
+
+.colunas {
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.coluna { display: flex; flex-direction: column; }
+
+.colunaTitulo {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin: 0 0 1rem;
+}
+
+.coluna a,
+.coluna span {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.94rem;
+  color: rgba(250, 244, 234, 0.78);
+  transition: color 0.2s var(--ease);
+}
+.coluna a:hover { color: var(--gold-200); }
+
+.comIcone { gap: 0.55rem; }
+.comIcone svg { flex: none; color: var(--gold-400); }
+
+.base {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid rgba(225, 204, 141, 0.16);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: rgba(250, 244, 234, 0.55);
+}
+
+.credito a {
+  color: var(--gold-300);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease);
+}
+.credito a:hover { border-bottom-color: var(--gold-300); }
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+    padding-bottom: 3.5rem;
+  }
+  .base { flex-direction: row; justify-content: space-between; align-items: center; }
+}

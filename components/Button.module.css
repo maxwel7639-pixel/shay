@@ -1,0 +1,68 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 52px;              /* > 44px de alvo de toque */
+  padding: 0.85rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.icon { flex: none; }
+
+/* dourado da marca + texto café: 6.1:1 */
+.primary {
+  background: var(--gold-500);
+  color: var(--espresso);
+  box-shadow: var(--shadow-gold);
+}
+.primary:hover { background: var(--gold-400); }
+.primary:active { background: var(--gold-600); }
+
+.outline {
+  background: transparent;
+  color: var(--brown-700);
+  border-color: var(--line);
+}
+.outline:hover {
+  background: var(--cream-200);
+  border-color: var(--gold-500);
+  color: var(--espresso);
+}
+
+/* sobre foto escura */
+.light {
+  background: rgba(253, 250, 244, 0.94);
+  color: var(--espresso);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-md);
+}
+.light:hover { background: var(--white); }
+
+.ghost {
+  background: transparent;
+  color: var(--gold-700);
+  border-color: transparent;
+  padding-inline: 0.5rem;
+  min-height: 44px;
+}
+.ghost:hover { color: var(--espresso); }
+
+.sm { min-height: 44px; padding: 0.6rem 1.25rem; font-size: 0.8rem; }
+.md { }
+.lg { padding: 1.05rem 2.25rem; font-size: 1rem; }
+
+@media (max-width: 480px) {
+  .btn { width: 100%; }
+  .ghost { width: auto; }
+}

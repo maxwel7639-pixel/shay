@@ -1,0 +1,55 @@
+.fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: var(--z-float);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  min-height: 56px;
+  min-width: 56px;
+  padding: 0 1.05rem;
+
+  background: linear-gradient(140deg, var(--gold-500), var(--gold-600));
+  color: var(--white);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 26px rgba(74, 55, 40, 0.28);
+
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease),
+    visibility 0.35s var(--ease), box-shadow 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.visivel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.fab:hover {
+  box-shadow: 0 12px 34px rgba(74, 55, 40, 0.36);
+  background: linear-gradient(140deg, var(--gold-400), var(--gold-500));
+}
+
+.icone { flex: none; }
+
+/* no mobile o botão fica redondo, só o ícone */
+.rotulo { display: none; }
+
+@media (min-width: 560px) {
+  .rotulo { display: inline; }
+}
+
+@media (min-width: 768px) {
+  .fab { right: 1.75rem; bottom: 1.75rem; }
+}

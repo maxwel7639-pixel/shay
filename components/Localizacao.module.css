@@ -1,0 +1,98 @@
+.secao {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line-soft);
+}
+
+.wrap { display: flex; justify-content: center; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 720px;
+  padding: 2.5rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 0.9rem;
+}
+.tracinho { display: block; width: 26px; height: 1px; background: var(--gold-400); }
+
+.titulo {
+  font-size: clamp(2rem, 6.5vw, 2.75rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.enfase { font-style: italic; color: var(--gold-700); }
+
+.infos {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  text-align: left;
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 2rem;
+}
+
+.infos li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.icone { color: var(--gold-600); flex: none; margin-top: 3px; }
+
+.infoTitulo {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-700);
+  margin-bottom: 0.3rem;
+}
+
+.infoTexto {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--text-body);
+  max-width: 52ch;
+}
+
+.telefone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--espresso);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.telefone:hover { color: var(--gold-700); border-bottom-color: var(--gold-500); }
+
+.botao { width: 100%; }
+
+@media (min-width: 560px) {
+  .botao { width: auto; }
+}
+
+@media (min-width: 768px) {
+  .card { padding: 3.5rem 3rem; }
+}
