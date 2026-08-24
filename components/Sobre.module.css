@@ -65,7 +65,7 @@
 
 .titulo {
   font-size: clamp(2.1rem, 7vw, 3rem);
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 1.25rem;
 }
 .enfase { font-style: italic; color: var(--gold-700); }

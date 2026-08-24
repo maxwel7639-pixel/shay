@@ -16,6 +16,7 @@ import {
   ESTADO,
   WHATSAPP_NUMBER,
   INSTAGRAM_URL,
+  SITE_URL,
 } from '@/lib/site';
 
 /* Dados estruturados — ajuda o Google a entender que é um negócio local
@@ -26,7 +27,9 @@ const jsonLd = {
   name: 'MS SPA',
   description:
     'Espaço de massoterapia e terapias naturais em Catolé do Rocha, PB. Massagem relaxante, drenagem linfática, ventosaterapia e terapias corporais.',
-  image: 'https://msspa.vercel.app/img/og.jpg',
+  '@id': SITE_URL,
+  url: SITE_URL,
+  image: `${SITE_URL}/img/og.jpg`,
   telephone: `+${WHATSAPP_NUMBER}`,
   address: {
     '@type': 'PostalAddress',

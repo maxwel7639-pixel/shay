@@ -46,9 +46,9 @@
   position: relative;
   padding: 0.5rem 0;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.06em;
-  color: rgba(253, 250, 244, 0.88);
+  color: rgba(253, 250, 244, 0.95);
   text-shadow: 0 1px 6px rgba(46, 32, 19, 0.5);
   transition: color 0.2s var(--ease), text-shadow 0.2s var(--ease);
 }

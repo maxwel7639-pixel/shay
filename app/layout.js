@@ -1,5 +1,6 @@
 import { Cinzel, Cormorant_Garamond, Italianno, Jost } from 'next/font/google';
 import './globals.css';
+import { SITE_URL } from '@/lib/site';
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -31,7 +32,7 @@ const jost = Jost({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://msspa.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: 'MS SPA — Massoterapia e Terapias Naturais | Catolé do Rocha, PB',
   description:
     'Espaço de massoterapia da Shauany Oliveira em Catolé do Rocha (PB). Massagem relaxante, drenagem linfática, ventosaterapia e terapias corporais com fundamento técnico. Agende pelo WhatsApp.',

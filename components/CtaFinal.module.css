@@ -45,7 +45,7 @@
 
 .titulo {
   font-size: clamp(2.1rem, 7vw, 3.1rem);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--cream-50);
   margin-bottom: 1rem;
   text-wrap: balance;
@@ -55,7 +55,7 @@
 .texto {
   font-size: 1.03rem;
   line-height: 1.75;
-  color: rgba(253, 250, 244, 0.88);
+  color: rgba(253, 250, 244, 0.95);
   max-width: 48ch;
   margin-bottom: 2.25rem;
 }

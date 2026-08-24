@@ -7,7 +7,7 @@
 :root {
   /* creme / base */
   --cream-50:  #FDFAF4;
-  --cream-100: #FAF4EA;
+  --cream-100: #F7EFE1;
   --cream-200: #F5EBD8;
   --cream-300: #EDE0C8;
   --cream-400: #E0CFB2;
@@ -18,12 +18,13 @@
   --gold-400:  #C9A961;
   --gold-500:  #BE9E37;
   --gold-600:  #A9882B;
-  --gold-700:  #8A6E1E;
+  --gold-700:  #745C15;
 
-  /* café / texto */
-  --espresso:  #2E2013;
-  --brown-700: #4A3728;
-  --brown-500: #6B5340;
+  /* café / texto — escurecidos: o creme claro exige texto cheio,
+     senão o corpo em peso leve some no fundo */
+  --espresso:  #241708;
+  --brown-700: #33241A;
+  --brown-500: #54402F;
   --taupe:     #79573F;
   --caramel:   #C7956A;
 
@@ -89,9 +90,9 @@ body {
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 1.0625rem;      /* 17px — legível em mobile */
-  line-height: 1.7;
-  font-weight: 300;
-  letter-spacing: 0.01em;
+  line-height: 1.72;
+  font-weight: 400;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -100,7 +101,7 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--text);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.15;
   letter-spacing: 0.005em;
   margin: 0;

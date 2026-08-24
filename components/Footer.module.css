@@ -1,6 +1,6 @@
 .footer {
   background: var(--espresso);
-  color: rgba(250, 244, 234, 0.78);
+  color: rgba(250, 244, 234, 0.88);
   padding-top: var(--sp-8);
 }
 
@@ -28,7 +28,7 @@
   font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(250, 244, 234, 0.6);
+  color: rgba(250, 244, 234, 0.72);
 }
 
 .colunas {
@@ -55,7 +55,7 @@
   align-items: center;
   min-height: 44px;
   font-size: 0.94rem;
-  color: rgba(250, 244, 234, 0.78);
+  color: rgba(250, 244, 234, 0.88);
   transition: color 0.2s var(--ease);
 }
 .coluna a:hover { color: var(--gold-200); }
@@ -71,7 +71,7 @@
   border-top: 1px solid rgba(225, 204, 141, 0.16);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  color: rgba(250, 244, 234, 0.55);
+  color: rgba(250, 244, 234, 0.7);
 }
 
 .credito a {

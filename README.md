@@ -3,6 +3,8 @@
 Landing page de apresentação e agendamento do **MS SPA**, espaço de massoterapia
 e terapias naturais da Shauany Oliveira (Shay) em Catolé do Rocha, PB.
 
+No ar: **https://shay-navy.vercel.app**
+
 Stack: **Next.js (App Router) + CSS Modules**, deploy na Vercel. Sem dependências
 de UI — tudo é CSS próprio sobre um conjunto de tokens.
 
@@ -28,8 +30,13 @@ letreiro dourado do espaço e posts do Instagram) com amostragem de cor.
 | `--espresso` | `#2E2013` | café escuro dos textos |
 
 Regra de contraste: **dourado claro nunca vira texto pequeno.** Textos em dourado
-usam `--gold-700` (`#8A6E1E`, 4.66:1 sobre o creme); os tons mais claros ficam em
+usam `--gold-700` (`#745C15`, 6.14:1 sobre o creme); os tons mais claros ficam em
 superfícies, linhas e ícones.
+
+O texto é escuro e de peso cheio de propósito: sobre creme, corpo em peso leve
+"some" no fundo. Corpo `#33241A` (14.3:1) e apoio `#54402F` (9.4:1), ambos em
+peso 400. Sobre foto, o véu do herói foi calibrado medindo o pixel de fundo mais
+claro atrás de cada bloco de texto — não no olho.
 
 **Tipografia**
 - `Cinzel` — logotipo "MS SPA" (bate com o letreiro dourado do espaço)
@@ -46,9 +53,23 @@ superfícies, linhas e ícones.
 | Acréscimos e formas de pagamento | `lib/site.js` |
 | Cores, espaçamentos, fontes | `app/globals.css` |
 | Dados estruturados (SEO local) | `app/page.js` |
+| URL pública (OpenGraph) | `lib/site.js` → `SITE_URL` |
 
 Todo CTA aponta para `whatsappLink()`, que monta o link a partir de
 `WHATSAPP_NUMBER` — trocar o número num lugar só atualiza os 18 links do site.
+
+## OpenGraph / preview do link
+
+`SITE_URL` em `lib/site.js` resolve a URL pública nesta ordem:
+
+1. `NEXT_PUBLIC_SITE_URL` — defina na Vercel quando houver domínio próprio
+2. `VERCEL_PROJECT_PRODUCTION_URL` — a Vercel injeta sozinha
+3. `http://localhost:3000` — só em dev
+
+Isso importa: as meta tags do OpenGraph precisam de **URL absoluta**. Se ela
+apontar para um domínio que não existe, WhatsApp e Instagram mostram o link sem
+imagem nenhuma. Ao plugar um domínio próprio, é só criar a variável
+`NEXT_PUBLIC_SITE_URL` no projeto da Vercel — nada no código muda.
 
 ## Pendências
 
